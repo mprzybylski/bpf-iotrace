@@ -6,7 +6,7 @@ Output from this tool may inform application optimization efforts,
 advanced filesystem tuning, and the design of storage performance benchmarks.
 
 ## Target operating system
-`bpf-iotrace` shall be compatible with any Linux host with libc6 v2.27 or later and a v4.14 or later kernel configured with eBPF.
+`bpf-iotrace` shall be compatible with any Linux host with glibc v2.27 or later and a v4.14 or later kernel configured with eBPF.
 
 ## Implementation languages
 * BPF probes shall be implemented in C and with critical functions implemented in BPF assembly as necessary.
@@ -20,6 +20,8 @@ All files shall be identified by a combination of their mount namespace ID, (i.e
 
 ### Per-file metrics
 `bpf-iotrace` shall record the following measurements and aggregate metrics for every file read from or written to by an instrumented application:
+* Number of times the file was opened
+* Number of times the file was closed
 * Error count for each instrumented I/O system call
 * Per-syscall read request size histogram
 * Per-syscall completed read size histogram

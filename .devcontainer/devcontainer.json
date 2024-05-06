@@ -1,0 +1,8 @@
+{
+  build: {
+    name: "bpf-iotrace_dev_container",
+    dockerfile: "Dockerfile",
+    args: {USERNAME: "${localEnv:USER}", USER_UID: "1000"}
+  },
+  privileged: true
+}

@@ -1,0 +1,16 @@
+{
+  "registries": [{
+    "kind": "git",
+    "repository": "https://github.com/mprzybylski/any-port-in-a-storm",
+    "reference": "main",
+    "packages": ["libbpf"],
+    "baseline": "6e86cb4b4b624fb55eaf94e789081e539199bd4f"
+  }
+  ],
+  "overlay-triplets": [
+    "./tools/vcpkg-overlays/triplets"
+  ],
+  "overlay-ports": [
+    "./tools/vcpkg-overlays/ports"
+  ]
+}
