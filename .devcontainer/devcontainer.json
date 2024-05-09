@@ -4,5 +4,10 @@
     dockerfile: "Dockerfile",
     args: {USERNAME: "${localEnv:USER}", USER_UID: "1000"}
   },
+  runArgs: [
+    "--mount", "type=bind,source=/sys/kernel/btf,target=/sys/kernel/btf,readonly",
+    "--mount", "type=bind,source=/sys/kernel/debug,target=/sys/kernel/debug,readonly",
+    "--mount", "type=bind,source=/sys/fs/bpf,target=/sys/fs/bpf"
+  ],
   privileged: true
 }

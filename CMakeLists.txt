@@ -22,6 +22,6 @@ project(
         LANGUAGES C CXX
 )
 
-
-
-
+# Pickup the header files installed by vcpkg
+include_directories("${VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/include")
+add_subdirectory(src)
