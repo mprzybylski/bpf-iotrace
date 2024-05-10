@@ -23,6 +23,7 @@ RUN FEATURES="-ipc-sandbox -network-sandbox -pid-sandbox" emerge 'sys-devel/clan
 # bpftool depends on LLVM, so install it later
 RUN FEATURES="-ipc-sandbox -network-sandbox -pid-sandbox" emerge dev-util/bpftool
 
+# To do: migrate these steps to `devcontainer.json`
 # Unprivilged user to make UID/GID mapping easier
 RUN FEATURES="-ipc-sandbox -network-sandbox -pid-sandbox" emerge app-admin/sudo
 ARG USERNAME
