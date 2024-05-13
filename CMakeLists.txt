@@ -9,7 +9,7 @@ set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_LIST_DIR}/tools/vcpkg/scripts/buildsys
 
 if(NOT EXISTS ${CMAKE_TOOLCHAIN_FILE})
     # Initialize / update the vcpkg submodule
-    execute_process(COMMAND git submodule update --init -- tools/vcpkg
+    execute_process(COMMAND git submodule update --init --depth 1 -- tools/vcpkg
             WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}
             COMMAND_ERROR_IS_FATAL ANY)
 endif()
