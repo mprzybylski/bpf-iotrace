@@ -22,6 +22,12 @@ project(
         LANGUAGES C CXX
 )
 
+if(NOT BPF_COMPILER)
+    # Path to `clang` in the dev container.
+    # Override with -DBPF_COMPILER=... if configuring outside dev container.
+    set(BPF_COMPILER /usr/lib/llvm/17/bin/clang)
+endif()
+
 # Pickup the header files installed by vcpkg
 include_directories("${VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/include")
 add_subdirectory(src)

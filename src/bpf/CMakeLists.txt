@@ -1,9 +1,3 @@
-if(NOT BPF_COMPILER)
-    # Path to `clang` in the dev container.
-    # Override with -DBPF_COMPILER=... if configuring outside dev container.
-    set(BPF_COMPILER /usr/lib/llvm/17/bin/clang)
-endif()
-
 set(CMAKE_C_COMPILER "${BPF_COMPILER}")
 
 # NOTES:
@@ -18,7 +12,7 @@ set(CMAKE_C_FLAGS "-target bpf -Werror -g -O2")
 list(APPEND BPF_OBJECT_TARGETS read)
 
 foreach (TARGET IN LISTS BPF_OBJECT_TARGETS)
-    add_library(${TARGET} OBJECT ${TARGET}.c )
+    add_library(${TARGET} OBJECT ${TARGET}.c ${TARGET}.h)
     list(APPEND BPF_OBJECT_LIBS $<TARGET_OBJECTS:${TARGET}>)
 endforeach ()
 

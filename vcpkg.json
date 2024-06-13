@@ -5,7 +5,7 @@
   "overrides": [
     {
       "name": "libbpf",
-      "version": "1.4.1#8"
+      "version": "1.4.1#10"
     }
   ],
   "builtin-baseline": "943c5ef1c8f6b5e6ced092b242c8299caae2ff01"
