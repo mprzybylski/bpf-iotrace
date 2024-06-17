@@ -7,7 +7,7 @@
   runArgs: [
     "--mount", "type=bind,source=/sys/kernel/btf,target=/sys/kernel/btf,readonly",
     "--mount", "type=bind,source=/sys/kernel/debug,target=/sys/kernel/debug,readonly",
-    "--mount", "type=bind,source=/sys/fs/bpf,target=/sys/fs/bpf"
+    "--mount", "type=bind,source=/sys/fs,target=/sys/fs"
   ],
   privileged: true
 }

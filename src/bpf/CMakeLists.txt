@@ -9,7 +9,7 @@ set(CMAKE_C_COMPILER "${BPF_COMPILER}")
 # - Optimization level 2 (-O2)
 set(CMAKE_C_FLAGS "-target bpf -Werror -g -O2")
 
-list(APPEND BPF_OBJECT_TARGETS read)
+list(APPEND BPF_OBJECT_TARGETS read.bpf)
 
 foreach (TARGET IN LISTS BPF_OBJECT_TARGETS)
     add_library(${TARGET} OBJECT ${TARGET}.c ${TARGET}.h)
